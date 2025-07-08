@@ -9,7 +9,6 @@ import { toast } from '@/hooks/use-toast';
 interface CartItem {
   id: number;
   name: string;
-  price: string;
   quantity: number;
   category: string;
 }
@@ -21,11 +20,11 @@ const Index = () => {
 
   // Mock product data for cart functionality
   const products = [
-    { id: 1, name: "HCL-Hydrochloric Acid", category: "Industrial Chemicals", price: "₹250/L" },
-    { id: 2, name: "Sulphuric Acid", category: "Industrial Chemicals", price: "₹180/L" },
-    { id: 3, name: "Nitric Acid", category: "Industrial Chemicals", price: "₹220/L" },
-    { id: 4, name: "Caustic Lye", category: "Industrial Chemicals", price: "₹150/kg" },
-    { id: 5, name: "Hypo chloride/Bleaching Liquid", category: "Industrial Chemicals", price: "₹120/L" },
+    { id: 1, name: "HCL-Hydrochloric Acid", category: "Industrial Chemicals" },
+    { id: 2, name: "Sulphuric Acid", category: "Industrial Chemicals" },
+    { id: 3, name: "Nitric Acid", category: "Industrial Chemicals" },
+    { id: 4, name: "Caustic Lye", category: "Industrial Chemicals" },
+    { id: 5, name: "Hypo chloride/Bleaching Liquid", category: "Industrial Chemicals" },
     // Add more products as needed for cart functionality
   ];
 
@@ -45,7 +44,6 @@ const Index = () => {
       setCartItems([...cartItems, {
         id: product.id,
         name: product.name,
-        price: product.price,
         quantity: 1,
         category: product.category
       }]);

@@ -10,12 +10,11 @@ interface ProductCardProps {
   name: string;
   category: string;
   description?: string;
-  price?: string;
   inStock: boolean;
   onAddToCart: (id: number) => void;
 }
 
-const ProductCard = ({ id, name, category, description, price, inStock, onAddToCart }: ProductCardProps) => {
+const ProductCard = ({ id, name, category, description, inStock, onAddToCart }: ProductCardProps) => {
   const getCategoryColor = (category: string) => {
     switch (category.toLowerCase()) {
       case 'industrial chemicals':
@@ -48,9 +47,6 @@ const ProductCard = ({ id, name, category, description, price, inStock, onAddToC
       <CardContent className="flex-grow">
         {description && (
           <p className="text-gray-600 text-sm mb-3">{description}</p>
-        )}
-        {price && (
-          <div className="text-xl font-bold text-blue-600">{price}</div>
         )}
       </CardContent>
       

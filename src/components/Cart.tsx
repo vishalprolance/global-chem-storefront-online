@@ -8,7 +8,6 @@ import { Minus, Plus, Trash2, ShoppingBag } from 'lucide-react';
 interface CartItem {
   id: number;
   name: string;
-  price: string;
   quantity: number;
   category: string;
 }
@@ -22,10 +21,6 @@ interface CartProps {
 }
 
 const Cart = ({ isOpen, onClose, items, onUpdateQuantity, onRemoveItem }: CartProps) => {
-  const total = items.reduce((sum, item) => {
-    const price = parseFloat(item.price.replace('₹', '').replace('/L', '').replace('/kg', '').replace('/pc', '').replace('/bottle', '').replace('/spray', '').replace('/pack', '').replace('/set', '').replace('/pair', ''));
-    return sum + (price * item.quantity);
-  }, 0);
 
   return (
     <Sheet open={isOpen} onOpenChange={onClose}>
@@ -87,17 +82,12 @@ const Cart = ({ isOpen, onClose, items, onUpdateQuantity, onRemoveItem }: CartPr
                           <Plus className="h-3 w-3" />
                         </Button>
                       </div>
-                      <div className="text-sm font-medium">{item.price}</div>
                     </div>
                   </div>
                 ))}
               </div>
 
               <div className="border-t pt-4 mt-4">
-                <div className="flex justify-between items-center mb-4">
-                  <span className="text-lg font-semibold">Total:</span>
-                  <span className="text-lg font-bold text-blue-600">₹{total.toFixed(2)}</span>
-                </div>
                 <Button className="w-full bg-green-600 hover:bg-green-700 text-white">
                   Proceed to Checkout
                 </Button>
