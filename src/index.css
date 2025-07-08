@@ -96,6 +96,26 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+  }
+
+  .text-structured {
+    line-height: 1.7;
+    letter-spacing: 0.01em;
+  }
+
+  /* Enhanced typography for addresses and structured content */
+  .address-text {
+    @apply text-structured;
+    font-variant-numeric: tabular-nums;
   }
 }

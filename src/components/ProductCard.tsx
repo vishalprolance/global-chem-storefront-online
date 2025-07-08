@@ -1,9 +1,7 @@
 
 import React from 'react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ShoppingCart } from 'lucide-react';
 
 interface ProductCardProps {
   id: number;
@@ -11,10 +9,9 @@ interface ProductCardProps {
   category: string;
   description?: string;
   inStock: boolean;
-  onAddToCart: (id: number) => void;
 }
 
-const ProductCard = ({ id, name, category, description, inStock, onAddToCart }: ProductCardProps) => {
+const ProductCard = ({ id, name, category, description, inStock }: ProductCardProps) => {
   const getCategoryColor = (category: string) => {
     switch (category.toLowerCase()) {
       case 'industrial chemicals':
@@ -49,17 +46,6 @@ const ProductCard = ({ id, name, category, description, inStock, onAddToCart }: 
           <p className="text-gray-600 text-sm mb-3">{description}</p>
         )}
       </CardContent>
-      
-      <CardFooter>
-        <Button
-          onClick={() => onAddToCart(id)}
-          disabled={!inStock}
-          className="w-full bg-green-600 hover:bg-green-700 disabled:bg-gray-300"
-        >
-          <ShoppingCart className="h-4 w-4 mr-2" />
-          {inStock ? "Add to Cart" : "Out of Stock"}
-        </Button>
-      </CardFooter>
     </Card>
   );
 };

@@ -15,10 +15,9 @@ interface Product {
 
 interface ProductCatalogProps {
   searchQuery: string;
-  onAddToCart: (id: number) => void;
 }
 
-const ProductCatalog = ({ searchQuery, onAddToCart }: ProductCatalogProps) => {
+const ProductCatalog = ({ searchQuery }: ProductCatalogProps) => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [mobileSearchQuery, setMobileSearchQuery] = useState('');
 
@@ -106,7 +105,7 @@ const ProductCatalog = ({ searchQuery, onAddToCart }: ProductCatalogProps) => {
       <div className="text-center mb-12">
         <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Product Catalog</h2>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          Browse our comprehensive selection of chemicals and materials for all your needs
+          Browse our comprehensive selection of available chemicals and materials
         </p>
       </div>
 
@@ -152,7 +151,6 @@ const ProductCatalog = ({ searchQuery, onAddToCart }: ProductCatalogProps) => {
             category={product.category}
             description={product.description}
             inStock={product.inStock}
-            onAddToCart={onAddToCart}
           />
         ))}
       </div>

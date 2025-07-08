@@ -1,16 +1,13 @@
 
 import React from 'react';
-import { ShoppingCart, Search } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Search } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 
 interface HeaderProps {
-  cartCount: number;
-  onCartClick: () => void;
   onSearchChange: (query: string) => void;
 }
 
-const Header = ({ cartCount, onCartClick, onSearchChange }: HeaderProps) => {
+const Header = ({ onSearchChange }: HeaderProps) => {
   return (
     <header className="bg-white shadow-lg border-b-2 border-blue-600 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -37,19 +34,9 @@ const Header = ({ cartCount, onCartClick, onSearchChange }: HeaderProps) => {
           </div>
 
           <div className="flex items-center space-x-4">
-            <Button
-              variant="outline"
-              onClick={onCartClick}
-              className="relative border-blue-600 text-blue-600 hover:bg-blue-50"
-            >
-              <ShoppingCart className="h-5 w-5" />
-              <span className="ml-2 hidden sm:inline">Cart</span>
-              {cartCount > 0 && (
-                <span className="absolute -top-2 -right-2 bg-green-600 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">
-                  {cartCount}
-                </span>
-              )}
-            </Button>
+            <div className="text-sm text-blue-600 font-medium">
+              Available Products
+            </div>
           </div>
         </div>
       </div>
