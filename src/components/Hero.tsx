@@ -2,7 +2,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { CheckCircle, Users, Shield } from 'lucide-react';
-import chemistryLabBubbles from '@/assets/chemistry-lab-bubbles.png';
+import chemistryLabBubbles from '@/assets/chemistry-lab-bubbles-goc.png';
 
 const Hero = () => {
   return (
