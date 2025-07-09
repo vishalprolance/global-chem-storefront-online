@@ -1,8 +1,8 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { CheckCircle, Truck, Shield } from 'lucide-react';
-import chemistryLabHero from '@/assets/chemistry-lab-hero.png';
+import { CheckCircle, Users, Shield } from 'lucide-react';
+import chemistryLabBubbles from '@/assets/chemistry-lab-bubbles.png';
 
 const Hero = () => {
   return (
@@ -12,7 +12,7 @@ const Hero = () => {
           {/* Chemistry Lab Visual Hero */}
           <div className="mb-8">
             <img 
-              src={chemistryLabHero} 
+              src={chemistryLabBubbles} 
               alt="Chemistry Laboratory Equipment" 
               className="mx-auto max-w-2xl w-full h-auto rounded-lg shadow-lg"
             />
@@ -49,9 +49,9 @@ const Hero = () => {
               <p className="text-gray-600">All products meet industry standards and safety requirements</p>
             </div>
             <div className="flex flex-col items-center text-center">
-              <Truck className="h-12 w-12 text-blue-600 mb-4" />
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Fast Delivery</h3>
-              <p className="text-gray-600">Reliable shipping and logistics for timely delivery</p>
+              <Users className="h-12 w-12 text-blue-600 mb-4" />
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Expert Consultation</h3>
+              <p className="text-gray-600">Professional guidance and technical support for chemical selection</p>
             </div>
             <div className="flex flex-col items-center text-center">
               <Shield className="h-12 w-12 text-green-600 mb-4" />
