@@ -2,17 +2,26 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { CheckCircle, Truck, Shield } from 'lucide-react';
+import chemistryLabHero from '@/assets/chemistry-lab-hero.png';
 
 const Hero = () => {
   return (
     <div className="bg-gradient-to-br from-blue-50 to-green-50 py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-            Professional Chemical
-            <span className="text-blue-600"> Solutions</span>
+          {/* Chemistry Lab Visual Hero */}
+          <div className="mb-8">
+            <img 
+              src={chemistryLabHero} 
+              alt="Chemistry Laboratory Equipment" 
+              className="mx-auto max-w-2xl w-full h-auto rounded-lg shadow-lg"
+            />
+          </div>
+          
+          <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
+            GLOBAL CHEMICALS
           </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
             Trusted supplier of industrial chemicals, household materials, and cleaning solutions since 1970. 
             Quality products for all your chemical needs.
           </p>
